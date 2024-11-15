@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function MovieList({ movies }) { 
   const navigate = useNavigate(); 
   
-  
+
   const handleMovieClick = (id) => {
     navigate(`/movie/${id}`); // Navigating to the movie detail page using the movie ID
   };

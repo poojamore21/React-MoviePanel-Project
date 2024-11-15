@@ -4,7 +4,11 @@ import { Outlet } from "react-router-dom";
 const HomePage = () => {
   return (
     <div>
-      <Outlet />
+      {/* 
+        The <Outlet /> is a placeholder that renders child routes defined 
+        in the React Router configuration. 
+      */}
+      <Outlet />  
     </div>
   );
 };
