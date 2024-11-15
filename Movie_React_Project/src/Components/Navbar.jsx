@@ -32,8 +32,13 @@ function Navbar() {
   // useEffect hook for debouncing the search term
   useEffect(() => {
     const timer = setTimeout(() => {
+      try{
       dispatch(setSearch(debouncedSearch)); // Dispatch the debounced search term to the Redux store
       dispatch(setPage(1));
+      }
+      catch (error) {
+        console.error("Error handling search input:", error); 
+      }
     }, 500); // 500ms debounce time
 
     return () => clearTimeout(timer); 
