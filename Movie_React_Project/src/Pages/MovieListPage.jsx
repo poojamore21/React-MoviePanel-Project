@@ -32,10 +32,14 @@ function MovieListPage() {
   // Fetch movies when category, search, or page state changes
   useEffect(() => {
     const loadMovies = async () => {
+      try {
       const data = await fetchMovies(category.id, search, page); 
 
       dispatch(setMovies(data.results)); 
       dispatch(setTotalPages(data.total_pages)); 
+      } catch (err) {
+        console.error("Error fetching movies:", err);
+      }
     };
 
     loadMovies(); 
